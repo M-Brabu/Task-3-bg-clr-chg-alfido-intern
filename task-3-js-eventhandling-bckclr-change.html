@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Changer</title>
+    <style>
+     body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        transition: all 3s ease;
+    }
+   #cc{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-style: solid;
+        border-width: 5px;
+        border-radius: 25px;
+        border-color: rgba(128, 128, 128,0.7);
+        width: fit-content;
+        background-color: rgba(254, 253, 253, 0.203);
+        backdrop-filter: blur(10px);
+     }
+     #but{
+        border-radius: 7px;
+        background-color:rgba(0,128,0,0.6);
+        border: none;
+        color: white;
+        height: 30px;
+     }
+     #but:hover{
+        cursor: pointer;
+        background-color: rgba(0,128,0,1);
+     }
+     .rgb{
+        width: 300px;
+     }
+     .inp{
+        border-radius: 10px;
+        width: 200px;
+        transition: all 0.7s ease;
+     }
+     .inp:hover{
+        width: 250px;
+     }
+    </style>
+</head>
+<body id="bdy">
+    <h1>Color-Changer</h1>
+    <div id="cc">
+    <h3>Click The Button To Change The Color of Background !!!!</h3>
+    <button id="but" onclick="changer()">New-color</button>
+    <h3 class="rgb">Red%:</h3><input id="r" class="inp" placeholder="red value" >
+    <h3 class="rgb">Blue%:</h3><input id="g" class="inp" placeholder="blue value">
+    <h3 class="rgb">Green%:</h3><input id="b"  class="inp" placeholder="green value">
+    </div>
+    <script>
+        function changer(){
+            var re=Math.floor(Math.random()*256)
+            var gr=Math.floor(Math.random()*256)
+            var bl=Math.floor(Math.random()*256)
+            var bdy=document.getElementById("bdy")
+            bdy.style.backgroundColor=`rgb(${re},${gr},${bl})`
+            document.getElementById("r").value=re
+            document.getElementById("g").value=gr
+            document.getElementById("b").value=bl    
+        }
+
+    </script>
+</body>
+</html
